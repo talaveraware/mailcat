@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Fondo Redondeado Gato -->
+  <rect x="10" y="20" width="80" height="60" rx="12" fill="#24389c" />
+  
+  <!-- Oreja Izquierda -->
+  <polygon points="10,20 30,20 10,0" fill="#24389c" />
+  
+  <!-- Oreja Derecha -->
+  <polygon points="70,20 90,20 90,0" fill="#24389c" />
+
+  <!-- Solapa de carta superior (forma de gato) -->
+  <path d="M 10 20 L 50 45 L 90 20 Z" fill="#3f51b5" />
+
+  <!-- Brillo / Glassmorphism subtle effect -->
+  <path d="M 10 80 L 50 45 L 90 80 Z" fill="#bac3ff" opacity="0.3" />
+</svg>

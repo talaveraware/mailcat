@@ -54,3 +54,14 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
   - [x] Actualización de la instrucción del agente (`.agents/skills/apply_mvc_pattern/SKILL.md`) para acatar estrictamente todas las nuevas capas arquitectónicas documentadas.
 
 ---
+
+## 14-04-26 - Integración de Sistema de Diseño (Mobile First & Dark Mode)
+
+- Integración del diseño visual desde Google Stitch hacia la SPA, configurando CSS estricto y estructura DOM para modo oscuro.
+  - [x] Extracción de tokens de colores de diseño (Slate & Indigo) hacia variables CSS en formato Dark Mode (`style.css`).
+  - [x] Implementación y estructuración de layout `Mobile First` siguiendo la directriz de "The Intelligent Workspace" (e.g. no-line rules).
+  - [x] Remplazo de estructura DOM estática en `main.js` por el template Dark Mode exportado de Stitch.
+  - [x] Configuración de tipografía Inter e iconos de Material Symbols integrados en `index.html`.
+  - [x] Validación visual y testing de responsividad en el preview local con subagente de navegador.
+
+---
