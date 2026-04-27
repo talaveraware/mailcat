@@ -177,3 +177,30 @@ document.querySelector("#app").innerHTML = `
 </div>
 </div>
 `;
+
+// Theme Toggle Logic
+const iconSpan = document.querySelector('span[data-icon="dark_mode"]');
+if (iconSpan) {
+  const themeToggleButton = iconSpan.closest('a');
+  const appWrapper = document.querySelector('.app-wrapper');
+
+  if (themeToggleButton && appWrapper) {
+    themeToggleButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Toggle classes
+      appWrapper.classList.toggle('dark');
+      appWrapper.classList.toggle('light');
+      
+      // Update icon
+      const isLight = appWrapper.classList.contains('light');
+      if (isLight) {
+        iconSpan.textContent = 'light_mode';
+        iconSpan.setAttribute('data-icon', 'light_mode');
+      } else {
+        iconSpan.textContent = 'dark_mode';
+        iconSpan.setAttribute('data-icon', 'dark_mode');
+      }
+    });
+  }
+}
