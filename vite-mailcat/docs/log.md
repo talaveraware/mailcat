@@ -74,4 +74,12 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
   - [x] Established an "always_on" project rule to mandate the use of the new logging skill.
   - [x] Removed obsolete logging rules to ensure system integrity and prevent conflicts.
 
+- Implemented the Sidebar component using strict MVC architecture.
+  - [x] Created the Sidebar directory under `src/components`.
+  - [x] Developed `SidebarModel.js` for theme state management.
+  - [x] Developed `SidebarView.js` using `DOMParser` for secure rendering.
+  - [x] Developed `SidebarController.js` for unidirectional data flow.
+  - [x] Created `SidebarFactory.js` for dependency injection.
+  - [x] Refactored `main.js` to mount the component dynamically and removed static HTML/logic.
+
 ---
