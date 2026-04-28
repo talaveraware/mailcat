@@ -1,5 +1,5 @@
 import "./style.css";
-import { SidebarFactory } from './components/Sidebar/SidebarFactory.js';
+import { SidebarFactory } from './factory/SidebarFactory.js';
 
 document.querySelector("#app").innerHTML = `
 <div class="app-wrapper dark">

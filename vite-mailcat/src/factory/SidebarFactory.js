@@ -1,6 +1,6 @@
-import { SidebarModel } from './SidebarModel.js';
-import { SidebarView } from './SidebarView.js';
-import { SidebarController } from './SidebarController.js';
+import { SidebarModel } from '../components/Sidebar/Model/SidebarModel.js';
+import { SidebarView } from '../components/Sidebar/View/SidebarView.js';
+import { SidebarController } from '../components/Sidebar/Controller/SidebarController.js';
 
 export class SidebarFactory {
   static create(rootElement) {

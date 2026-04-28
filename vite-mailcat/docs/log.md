@@ -83,3 +83,14 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
   - [x] Refactored `main.js` to mount the component dynamically and removed static HTML/logic.
 
 ---
+
+## 28-04-26 - Sidebar Component Restructuring
+
+- Applied the `create_component_structure` skill to the Sidebar component and relocated its Factory.
+  - [x] Conducted an in-depth analysis of the `src/components/Sidebar` component.
+  - [x] Moved MVC files (`SidebarController.js`, `SidebarModel.js`, `SidebarView.js`) to their corresponding subdirectories.
+  - [x] Created the global `src/factory/` directory and moved `SidebarFactory.js` there.
+  - [x] Updated path references and imports in `src/main.js` and `src/factory/SidebarFactory.js`.
+  - [x] Verified successful compilation and ensured component functionality remained intact.
+
+---
