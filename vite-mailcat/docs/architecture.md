@@ -2,19 +2,28 @@
 
 Este documento fundamenta la arquitectura frontend estricta que todo nuestro código debe seguir. Su propósito es que tanto desarrolladores humanos como las IAs comprendan e implementen este patrón de manera consistente a lo largo de todo el proyecto.
 
-## 1. Visión General: SPA con Vanilla JS
+## 1. Visión General: Comportamiento SPA con Vanilla JS
 
-El frontend imita el comportamiento de una Single Page Application (SPA) y Frameworks robustos usando Vanilla JS:
+El frontend implementa una arquitectura **Single Page Application (SPA)** pura utilizando únicamente Vanilla JS, emulando la fluidez y experiencia de usuario de frameworks modernos robustos (como React o Vue) pero garantizando cero dependencias externas para el enrutamiento.
 
-Router Propio (src/components/router/router.js): Modifica el historial de navegación (History API) e intercepta el estado de recarga para inyectar componentes dinámicamente en el div #app sin recargar la página.
-Estructura de Componentes MVC: Cada funcionalidad principal o "página" (como Login, Dashboard o Modales) se divide en tres partes:
-View (*View.js): Se encarga exclusiva y declarativamente de renderizar el HTML (por medio de strings construidos dinámicamente y el DOMParser) y de retornar referencias a los elementos DOM (LoginElements).
-Model (*Model.js): Gestiona los datos y se comunica con las APIs externas mediante fetch hacia el backend.
-Controller (*Controller.js): Actúa de pegamento. Inyecta eventos (addEventListener) a la View y comunica las acciones al Model. También utiliza clases auxiliares, como validadores o gestores de almacenamiento (LocalStorage).
+### Enrutador Dinámico y History API
+El núcleo de esta arquitectura recae en nuestro **Router propio (`src/components/router/router.js`)**, el cual asegura una navegación continua sin recargas de página mediante las siguientes responsabilidades:
+
+1. **Gestión de la History API:** Modifica activamente el historial de navegación del navegador (mediante `history.pushState`). Esto permite que la URL en la barra de direcciones se actualice correctamente para reflejar la vista actual y mantener soporte para marcadores, todo sin provocar una recarga de la página.
+2. **Interceptación de Navegación:** El router intercepta el estado de recarga, los clics en enlaces de la aplicación, y los eventos de retroceso/avance (`popstate`), previniendo el comportamiento por defecto (refresh).
+3. **Inyección de Componentes (Mount/Unmount):** Al detectar un cambio de ruta, el router determina qué componente debe mostrarse. Limpia el DOM actual y luego **inyecta componentes dinámicamente en el contenedor raíz `<div id="app">`**. Esta transición ocurre en memoria, resultando en cambios de interfaz instantáneos.
+
+### Estructura de Componentes MVC y Factory
+Cada funcionalidad principal o "página" (como Login, Dashboard o Modales) inyectada por el router se divide estrictamente en las siguientes cuatro partes fundamentales:
+
+- **Factory (*Factory.js):** El único encargado de ensamblar el componente completo instanciando y conectando de manera segura el Modelo, la Vista y el Controlador.
+- **View (*View.js):** Se encarga exclusiva y declarativamente de renderizar el HTML (por medio de strings construidos dinámicamente y el `DOMParser`) y de retornar referencias a los elementos DOM (ej. LoginElements).
+- **Model (*Model.js):** Gestiona los datos, el estado local y se comunica con las APIs externas mediante fetch hacia el backend.
+- **Controller (*Controller.js):** Actúa de pegamento. Inyecta eventos (`addEventListener`) a la View y comunica las acciones al Model. También utiliza clases auxiliares, como validadores o gestores de almacenamiento (`LocalStorage`).
 
 ## 2. Implementación Estricta MVC: La Regla de 4 Archivos y Componentización Absoluta
 
-Aunque los componentes se conceptualizan en 3 capas fundamentales en el resumen anterior, la implementación física en nuestro proyecto exige un **cuarto archivo clave: el Factory**.
+Para que el patrón MVC y el comportamiento SPA funcionen sin colisiones, la implementación física en nuestro proyecto exige que **TODO se construya siempre utilizando la regla estricta de estos 4 archivos**.
 
 En este proyecto **TODO es un componente**. No existen carpetas como `services` ni `utils`. Toda funcionalidad (sea el Validador, conectores a Gemini, o utilidades sueltas) reside en su respectiva carpeta dentro de `src/components/` y se rige, siempre que la lógica lo permita, bajo una estructura de cuatro archivos funcionales:
 

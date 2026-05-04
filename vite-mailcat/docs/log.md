@@ -94,3 +94,24 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
   - [x] Verified successful compilation and ensured component functionality remained intact.
 
 ---
+
+## 04-05-26 - SPA Router Implementation, Dashboard Component and Page Skill
+
+- Expanded the technical documentation to detail the Single Page Application (SPA) behavior.
+  - [x] Updated `docs/architecture.md` with an in-depth explanation of the custom Router.
+  - [x] Documented the `History API` management and the `popstate` event logic.
+  - [x] Detailed the dynamic component injection process into the `#app` container without page reloads.
+  - [x] Reintroduced and defined the `Factory` layer in the MVC structure summary for consistency.
+
+- Implemented the Dashboard component using strict MVC architecture and SPA routing.
+  - [x] Created the Dashboard directory structure under `src/components/Dashboard` (Controller, Model, View, Icons).
+  - [x] Developed `DashboardModel.js`, `DashboardView.js` (using DOMParser), and `DashboardController.js`.
+  - [x] Created `src/factory/dash_factory.js` for dependency injection and Sidebar integration.
+  - [x] Refactored `src/main.js` to initialize the SPA Router using a route map based on `main.example.js`.
+  - [x] Fixed a critical bug in `src/router/router.js` ensuring returned elements from routes are correctly appended to the `#app` container.
+
+- Developed a new system skill and rule for creating navigation page components.
+  - [x] Created the `create_page_component` skill in `.agents/skills/create_page_component/SKILL.md`.
+  - [x] Established the mandatory rule `use_page_component_skill.md` to standardize page creation and prevent direct DOM injection errors in `main.js`.
+
+---
