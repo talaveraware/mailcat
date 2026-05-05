@@ -129,4 +129,10 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
   - [x] Created the `extract_dashboard_component` skill in `.agents/skills/extract_dashboard_component/SKILL.md` enforcing strict MVC application, visual checks, and DOM structure preservation.
   - [x] Created the mandatory project rule `use_extract_dashboard_component_skill.md` to trigger on Dashboard component manipulation requests.
 
+- Implemented real-time word and character counter for the `EntradaUsuario` component.
+  - [x] Modified `EntradaUsuarioView.js` to include element getters and a `updateCounterText` method.
+  - [x] Updated the initial UI state of the counter to "0 palabras / 0 caracteres".
+  - [x] Implemented the counting logic in `EntradaUsuarioController.js` triggered by the `input` event for real-time updates.
+  - [x] Configured word counting to handle whitespace accurately and reflect text additions/deletions.
+
 ---
