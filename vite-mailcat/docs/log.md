@@ -115,3 +115,18 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
   - [x] Established the mandatory rule `use_page_component_skill.md` to standardize page creation and prevent direct DOM injection errors in `main.js`.
 
 ---
+
+## 05-05-26 - EntradaUsuario Component and Extraction Skill
+
+- Extracted the 'Input Draft' section from the Dashboard into a standalone `EntradaUsuario` component using MVC and Factory patterns.
+  - [x] Analyzed `DashboardView.js` and `dash_factory.js` architecture.
+  - [x] Created `src/components/EntradaUsuario/` structure (Model, View, Controller).
+  - [x] Extracted HTML securely to `EntradaUsuarioView.js` without altering CSS layout.
+  - [x] Implemented `src/factory/EntradaUsuarioFactory.js` for injection.
+  - [x] Updated `DashboardView.js` and `dash_factory.js` to inject the new component seamlessly.
+
+- Developed an automated system skill and rule for extracting dashboard components.
+  - [x] Created the `extract_dashboard_component` skill in `.agents/skills/extract_dashboard_component/SKILL.md` enforcing strict MVC application, visual checks, and DOM structure preservation.
+  - [x] Created the mandatory project rule `use_extract_dashboard_component_skill.md` to trigger on Dashboard component manipulation requests.
+
+---
