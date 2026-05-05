@@ -35,7 +35,7 @@ export class DashboardView {
         
         <!-- Left Column -->
         <div class="col-span-12 lg:col-span-7 space-y-4 lg:space-y-6">
-          <div class="bg-surface-container-low rounded-3xl p-4 lg:p-6 border border-outline-variant/10 shadow-sm">
+          <div id="input-draft-container" class="bg-surface-container-low rounded-3xl p-4 lg:p-6 border border-outline-variant/10 shadow-sm">
             <div class="flex items-center justify-between mb-4">
               <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Input Draft</label>
               <span class="text-[10px] text-on-surface-variant/50">42 words / 238 chars</span>
