@@ -41,6 +41,64 @@ export class EntradaUsuarioView {
     return this.$container ? this.$container.querySelector('#clear-all') : null;
   }
 
+  get micButton() {
+    return this.$container ? this.$container.querySelector('#btn-mic') : null;
+  }
+
+  /**
+   * Reemplaza el ícono del micrófono con la onda animada de dictado.
+   * Solo se muestra mientras isRecording === true.
+   */
+  showWaveIcon() {
+    const btn = this.micButton;
+    if (btn) {
+      btn.innerHTML = `
+        <span class="wave-icon">
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+          <span class="wave-bar"></span>
+        </span>
+      `;
+    }
+  }
+
+  /**
+   * Restaura el ícono original del micrófono.
+   */
+  showMicIcon() {
+    const btn = this.micButton;
+    if (btn) {
+      btn.innerHTML = `<span class="material-symbols-outlined" data-icon="mic">mic</span>`;
+    }
+  }
+
+  /**
+   * Inserta el texto transcrito al final del textarea.
+   * Dispara el evento 'input' para que el Controller actualice el contador.
+   * @param {string} text - Texto transcrito.
+   */
+  appendText(text) {
+    const input = this.inputElement;
+    if (input) {
+      const separator = input.value.length > 0 ? ' ' : '';
+      input.value += separator + text;
+      input.dispatchEvent(new Event('input'));
+    }
+  }
+
+  /**
+   * Registra el handler del click en el botón de micrófono.
+   * @param {Function} handler
+   */
+  bindMicClick(handler) {
+    const btn = this.micButton;
+    if (btn) {
+      btn.addEventListener('click', handler);
+    }
+  }
+
   updateCounterText(words, chars) {
     const counter = this.counterElement;
     if (counter) {

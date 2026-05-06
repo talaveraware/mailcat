@@ -205,3 +205,35 @@ body {
 .light .editorial-shadow {
   box-shadow: 0px 12px 32px rgba(90, 125, 250, 0.06);
 }
+
+/* =============================================
+   Dictado por Voz — Ícono de onda animada
+   Solo visible cuando isRecording === true
+   ============================================= */
+@keyframes wave-bar {
+  0%, 100% { transform: scaleY(0.25); opacity: 0.6; }
+  50%       { transform: scaleY(1);   opacity: 1;   }
+}
+
+.wave-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 20px;
+}
+
+.wave-bar {
+  display: block;
+  width: 3px;
+  height: 16px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transform-origin: center;
+  animation: wave-bar 0.9s ease-in-out infinite;
+}
+
+.wave-bar:nth-child(1) { animation-delay: 0.00s; }
+.wave-bar:nth-child(2) { animation-delay: 0.15s; }
+.wave-bar:nth-child(3) { animation-delay: 0.30s; }
+.wave-bar:nth-child(4) { animation-delay: 0.45s; }
+.wave-bar:nth-child(5) { animation-delay: 0.60s; }

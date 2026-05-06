@@ -137,11 +137,19 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
 
 ---
 
-## 06-05-26 - Implementation of Clear All functionality for EntradaUsuario
+## 06-05-26 - Implementation of Clear All functionality and Voice Dictation for EntradaUsuario
 
 - Developed the feature to clear the input field in the `EntradaUsuario` component.
   - [x] Added `clearButton` getter in `EntradaUsuarioView.js` to access the `#clear-all` button.
   - [x] Updated `EntradaUsuarioController.js` to bind a click event to the clear button.
   - [x] Implemented `clearInput()` method in the controller to reset the textarea and the counter.
 
+- Implemented voice-to-text dictation using the Web Speech API in the `EntradaUsuario` component.
+  - [x] Added `startDictation` and `stopDictation` logic to `EntradaUsuarioModel.js` with robust error handling.
+  - [x] Implemented dynamic icon switching (microphone to animated wave) in `EntradaUsuarioView.js`.
+  - [x] Integrated dictation logic in `EntradaUsuarioController.js`, including success/failure flows and real-time counter updates.
+  - [x] Designed and implemented CSS keyframe animations for the voice wave icon in `style.css`.
+  - [x] Fixed a bug where the microphone icon remained in the "wave" state when stopping dictation by cleaning up event handlers and UI state synchronously.
+
 ---
+
