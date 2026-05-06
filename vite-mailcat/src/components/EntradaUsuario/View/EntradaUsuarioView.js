@@ -37,6 +37,10 @@ export class EntradaUsuarioView {
     return this.$container ? this.$container.querySelector('#counter') : null;
   }
 
+  get clearButton() {
+    return this.$container ? this.$container.querySelector('#clear-all') : null;
+  }
+
   updateCounterText(words, chars) {
     const counter = this.counterElement;
     if (counter) {

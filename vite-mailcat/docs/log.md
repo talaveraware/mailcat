@@ -136,3 +136,12 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
   - [x] Configured word counting to handle whitespace accurately and reflect text additions/deletions.
 
 ---
+
+## 06-05-26 - Implementation of Clear All functionality for EntradaUsuario
+
+- Developed the feature to clear the input field in the `EntradaUsuario` component.
+  - [x] Added `clearButton` getter in `EntradaUsuarioView.js` to access the `#clear-all` button.
+  - [x] Updated `EntradaUsuarioController.js` to bind a click event to the clear button.
+  - [x] Implemented `clearInput()` method in the controller to reset the textarea and the counter.
+
+---

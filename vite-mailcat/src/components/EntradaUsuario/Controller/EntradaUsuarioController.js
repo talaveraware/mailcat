@@ -17,6 +17,19 @@ export class EntradaUsuarioController {
       // El evento 'input' cubre teclas oprimidas, texto pegado, borrado y cortado
       inputElement.addEventListener('input', () => this.updateCounter());
     }
+
+    const clearButton = this.view.clearButton;
+    if (clearButton) {
+      clearButton.addEventListener('click', () => this.clearInput());
+    }
+  }
+
+  clearInput() {
+    const inputElement = this.view.inputElement;
+    if (inputElement) {
+      inputElement.value = '';
+      this.updateCounter();
+    }
   }
 
   updateCounter() {
