@@ -162,4 +162,5 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
   - [x] Created `src/factory/CardOpcionesFactory.js` following the same static factory pattern.
   - [x] Updated `DashboardView.js` to add `$cardOpcionesRoot` and replace the original `#cardOptions` block with `<div id="card-opciones-root"></div>`.
   - [x] Updated `dash_factory.js` to import and inject `CardOpcionesFactory` into the new placeholder.
-
+  - [x] Updated `DashboardView.js` to add `$cardResultRoot` reference and create a new `#result-section` container below the columns, preserving layout and styles.
+  - [x] Ensured `#cardResultRoot` occupies full width, centered, with min‑height 180px, using existing design system tokens.
