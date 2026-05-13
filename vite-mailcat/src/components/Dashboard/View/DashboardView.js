@@ -3,6 +3,7 @@ export class DashboardView {
     this.root = this.createElement(this.template());
     this.$sidebarRoot = this.root.querySelector('#sidebar-root');
     this.$entradaUsuarioRoot = this.root.querySelector('#entrada-usuario-root');
+    this.$cardOpcionesRoot = this.root.querySelector('#card-opciones-root');
     // Referencias adicionales pueden ir aquí con el prefijo $
   }
 
@@ -90,36 +91,8 @@ export class DashboardView {
         </div>
         
         <!-- Right Column -->
-        <div class="col-span-12 lg:col-span-5 flex flex-col gap-4 lg:gap-6 mt-2 lg:mt-0">
-          <button id="optimizeBtn" class="w-full gradient-primary text-on-primary font-extrabold text-lg lg:text-xl rounded-3xl flex items-center justify-center gap-3 shadow-2xl shadow-primary/20 transition-all hover:scale-[1.01] active:scale-[0.99] group h-[60px]">
-            <span class="material-symbols-outlined text-2xl group-hover:rotate-12 transition-transform" data-icon="auto_fix_high" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
-            Optimizar con IA
-          </button>
-          
-          <!-- Moved Tone Parameter here (per Dark Layout) -->
-          <div id="toneParameterRoot" class="bg-surface-container-low rounded-3xl p-4 lg:p-6 border border-outline-variant/10 shadow-sm">
-            <label class="block text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4 lg:mb-6">Synthesis Parameter: Tone</label>
-            <div class="flex flex-wrap gap-2">
-              <button id="formalBtn" class="px-4 lg:px-6 py-2 lg:py-2.5 rounded-full bg-primary text-on-primary font-semibold text-xs lg:text-sm transition-all shadow-lg shadow-primary/10">
-                  Formal
-              </button>
-              <button id="friendlyBtn" class="px-4 lg:px-6 py-2 lg:py-2.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all border border-outline-variant/10 text-xs lg:text-sm">
-                  Amable
-              </button>
-              <button id="urgentBtn" class="px-4 lg:px-6 py-2 lg:py-2.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all border border-outline-variant/10 text-xs lg:text-sm">
-                  Urgente
-              </button>
-              <button id="persuasiveBtn" class="px-4 lg:px-6 py-2 lg:py-2.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all border border-outline-variant/10 text-xs lg:text-sm">
-                  Persuasivo
-              </button>
-              <button id="conciseBtn" class="px-4 lg:px-6 py-2 lg:py-2.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all border border-outline-variant/10 text-xs lg:text-sm">
-                  Conciso
-              </button>
-              <button id="moreBtn" class="w-8 h-8 flex lg:w-10 lg:h-10 items-center justify-center rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all border border-outline-variant/10">
-                <span class="material-symbols-outlined text-sm" data-icon="more_horiz">more_horiz</span>
-              </button>
-            </div>
-          </div>
+        <div id="rightColumnRoot" class="col-span-12 lg:col-span-5 flex flex-col gap-4 lg:gap-6 mt-2 lg:mt-0">
+          <div id="card-opciones-root"></div>
         </div>
       </div>
     </div>

@@ -152,4 +152,14 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
   - [x] Fixed a bug where the microphone icon remained in the "wave" state when stopping dictation by cleaning up event handlers and UI state synchronously.
 
 ---
+## 13-05-26 - CardOpciones Component Extraction
+
+- Encapsulated the original `#cardOptions` UI into a new `CardOpciones` component using MVC and Factory patterns.
+  - [x] Created `CardOpciones/Icons/svg_icons.js` with icon templates.
+  - [x] Created `CardOpciones/Model/CardOpcionesModel.js` (empty model for future logic).
+  - [x] Created `CardOpciones/View/CardOpcionesView.js` rendering the exact original markup, exposing getters for the 7 buttons and `bind*Click` methods.
+  - [x] Created `CardOpciones/Controller/CardOpcionesController.js` binding all button clicks with stub handlers.
+  - [x] Created `src/factory/CardOpcionesFactory.js` following the same static factory pattern.
+  - [x] Updated `DashboardView.js` to add `$cardOpcionesRoot` and replace the original `#cardOptions` block with `<div id="card-opciones-root"></div>`.
+  - [x] Updated `dash_factory.js` to import and inject `CardOpcionesFactory` into the new placeholder.
 

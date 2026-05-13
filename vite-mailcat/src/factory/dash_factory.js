@@ -3,6 +3,7 @@ import { DashboardView } from '../components/Dashboard/View/DashboardView.js';
 import { DashboardController } from '../components/Dashboard/Controller/DashboardController.js';
 import { SidebarFactory } from './SidebarFactory.js';
 import { EntradaUsuarioFactory } from './EntradaUsuarioFactory.js';
+import { CardOpcionesFactory } from './CardOpcionesFactory.js';
 
 export class DashboardFactory {
   static async dashComponent() {
@@ -18,6 +19,11 @@ export class DashboardFactory {
     // Inyectamos el componente EntradaUsuario
     if (view.$entradaUsuarioRoot) {
       EntradaUsuarioFactory.create(view.$entradaUsuarioRoot);
+    }
+
+    // Inyectamos el componente CardOpciones
+    if (view.$cardOpcionesRoot) {
+      CardOpcionesFactory.create(view.$cardOpcionesRoot);
     }
 
     return { element: view.root };
