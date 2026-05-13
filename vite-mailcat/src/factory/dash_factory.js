@@ -4,6 +4,7 @@ import { DashboardController } from '../components/Dashboard/Controller/Dashboar
 import { SidebarFactory } from './SidebarFactory.js';
 import { EntradaUsuarioFactory } from './EntradaUsuarioFactory.js';
 import { CardOpcionesFactory } from './CardOpcionesFactory.js';
+import { CardResultadosFactory } from './CardResultadosFactory.js';
 
 export class DashboardFactory {
   static async dashComponent() {
@@ -24,6 +25,11 @@ export class DashboardFactory {
     // Inyectamos el componente CardOpciones
     if (view.$cardOpcionesRoot) {
       CardOpcionesFactory.create(view.$cardOpcionesRoot);
+    }
+
+    // Inyectamos el componente CardResultados
+    if (view.$cardResultRoot) {
+      CardResultadosFactory.create(view.$cardResultRoot);
     }
 
     return { element: view.root };

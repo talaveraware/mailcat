@@ -164,3 +164,11 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
   - [x] Updated `dash_factory.js` to import and inject `CardOpcionesFactory` into the new placeholder.
   - [x] Updated `DashboardView.js` to add `$cardResultRoot` reference and create a new `#result-section` container below the columns, preserving layout and styles.
   - [x] Ensured `#cardResultRoot` occupies full width, centered, with min‑height 180px, using existing design system tokens.
+- Encapsulated the `#cardResultRoot` UI into a new `CardResultados` component using MVC and Factory patterns.
+  - [x] Created `CardResultados/Icons/svg_icons.js` with migrated SVG icons (Copy, PDF, Mail, Stars).
+  - [x] Created `CardResultados/Model/CardResultadosModel.js` (empty).
+  - [x] Created `CardResultados/View/CardResultadosView.js` with original markup, SVG integration, and event binding methods.
+  - [x] Created `CardResultados/Controller/CardResultadosController.js` with pre-configured handlers for Copy and Export PDF buttons.
+  - [x] Created `src/factory/CardResultadosFactory.js`.
+  - [x] Updated `DashboardView.js` to replace hardcoded result block with `<div id="card-result-root"></div>`.
+  - [x] Updated `dash_factory.js` to import and inject `CardResultadosFactory` into the placeholder.
