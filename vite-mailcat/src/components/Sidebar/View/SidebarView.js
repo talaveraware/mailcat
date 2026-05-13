@@ -9,11 +9,15 @@ export class SidebarView {
   render() {
     const template = `
       <aside class="sidebar p-4 gap-2 font-['Inter'] antialiased tracking-tight">
+        <button id="sidebar-toggle" class="sidebar-toggle-btn">
+          <span class="material-symbols-outlined text-[16px]" data-icon="menu_open">menu_open</span>
+        </button>
+
         <div class="mb-8 px-2 flex items-center gap-3 hidden lg:flex">
-          <div class="w-8 h-8 rounded bg-primary flex items-center justify-center">
+          <div class="w-8 h-8 rounded bg-primary flex items-center justify-center shrink-0">
             <span class="material-symbols-outlined text-on-primary text-xl" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
           </div>
-          <div>
+          <div class="sidebar-text">
             <h1 class="text-xl font-bold tracking-tighter text-primary">MailCat AI</h1>
             <p class="text-[10px] uppercase tracking-widest text-on-surface-variant opacity-60">Pro Synthesis</p>
           </div>
@@ -21,34 +25,37 @@ export class SidebarView {
         
         <nav class="flex flex-row lg:flex-col lg:flex-1 space-x-2 lg:space-x-0 lg:space-y-1 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
           <a class="text-primary font-semibold flex items-center gap-3 px-4 py-3 bg-surface-container border border-outline-variant/10 rounded-lg transition-transform active:scale-[0.98] whitespace-nowrap" href="#">
-            <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Principal
+            <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> <span class="sidebar-text">Principal</span>
           </a>
           <a class="text-on-surface-variant hover:text-on-surface flex items-center gap-3 px-4 py-3 transition-all duration-200 hover:bg-surface-container-low rounded-lg whitespace-nowrap" href="#">
-            <span class="material-symbols-outlined" data-icon="edit_square">edit_square</span> Borradores
+            <span class="material-symbols-outlined" data-icon="edit_square">edit_square</span> <span class="sidebar-text">Borradores</span>
           </a>
           <a class="text-on-surface-variant hover:text-on-surface flex items-center gap-3 px-4 py-3 transition-all duration-200 hover:bg-surface-container-low rounded-lg whitespace-nowrap hidden lg:flex" href="#">
-            <span class="material-symbols-outlined" data-icon="insights">insights</span> Estadísticas
+            <span class="material-symbols-outlined" data-icon="insights">insights</span> <span class="sidebar-text">Estadísticas</span>
           </a>
           <a class="text-on-surface-variant hover:text-on-surface flex items-center gap-3 px-4 py-3 transition-all duration-200 hover:bg-surface-container-low rounded-lg whitespace-nowrap hidden lg:flex" href="#">
-            <span class="material-symbols-outlined" data-icon="settings">settings</span> Configuración
+            <span class="material-symbols-outlined" data-icon="settings">settings</span> <span class="sidebar-text">Configuración</span>
           </a>
         </nav>
 
-        <button class="hidden lg:flex mt-4 w-full gradient-primary text-on-primary font-bold py-3 items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity rounded-full">
-          <span class="material-symbols-outlined text-sm" data-icon="add">add</span>
-          New Draft
-        </button>
+        
         
         <div class="mt-auto pt-4 border-t border-outline-variant/15 space-y-1 hidden lg:block">
           <a class="text-on-surface-variant hover:text-on-surface flex items-center gap-3 px-4 py-3 transition-all duration-200 hover:bg-surface-container-low rounded-lg" href="#">
-            <span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span> Theme
+            <span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span> <span class="sidebar-text">Tema</span>
           </a>
           <a class="text-on-surface-variant hover:text-on-surface flex items-center gap-3 px-4 py-3 transition-all duration-200 hover:bg-surface-container-low rounded-lg" href="#">
-            <span class="material-symbols-outlined" data-icon="help_outline">help_outline</span> Support
+            <span class="material-symbols-outlined" data-icon="help_outline">help_outline</span> <span class="sidebar-text">Soporte</span>
           </a>
-          <div class="mt-4 p-3 bg-surface-container border border-outline-variant/10 flex items-center gap-3 rounded-full">
-            <img alt="User profile avatar" class="w-8 h-8 rounded-full border border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5GkmlpWQuDSVPM06AtnXzCV2XffSt6BEsoQhV417298nGjjFyuLT0c2gpRsAqfKt4xf8g2doVMYeVGRIRs6WNnvhZnI-jZzM7gqAdLiKN5Fawb6a6nBhOiFXV-4hC591gedXHqWvfJQTKujEwlXySiGmRm4Tpchbsr3H4PaH4vPh07lW6AmppCKhrYpij9P6aolTT2nyMunfXdWmYHaoUXow8qIepeVYr5dBswVJb1bL5NmbOm9IBJqCOsP_PX0jfWGLd8odCqDo"/>
-            <div class="overflow-hidden">
+
+          <button id="new-draft" class="hidden lg:flex mt-4 w-full gradient-primary text-on-primary font-bold py-3 items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity rounded-full shrink-0">
+            <span class="material-symbols-outlined text-sm shrink-0" data-icon="add">add</span>
+            <span class="sidebar-text">Nuevo</span>
+          </button>
+          
+          <div class="user-profile-container mt-4 p-3 bg-surface-container border border-outline-variant/10 flex items-center gap-3 rounded-full transition-all duration-300">
+            <img alt="User profile avatar" class="w-8 h-8 rounded-full border border-outline-variant/30 shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5GkmlpWQuDSVPM06AtnXzCV2XffSt6BEsoQhV417298nGjjFyuLT0c2gpRsAqfKt4xf8g2doVMYeVGRIRs6WNnvhZnI-jZzM7gqAdLiKN5Fawb6a6nBhOiFXV-4hC591gedXHqWvfJQTKujEwlXySiGmRm4Tpchbsr3H4PaH4vPh07lW6AmppCKhrYpij9P6aolTT2nyMunfXdWmYHaoUXow8qIepeVYr5dBswVJb1bL5NmbOm9IBJqCOsP_PX0jfWGLd8odCqDo"/>
+            <div class="overflow-hidden sidebar-text">
               <p class="text-sm font-bold truncate text-on-surface">Alex Sterling</p>
               <p class="text-[10px] text-on-surface-variant truncate">alex@mailcat.ai</p>
             </div>
@@ -88,6 +95,28 @@ export class SidebarView {
         this.$themeIcon.textContent = 'dark_mode';
         this.$themeIcon.setAttribute('data-icon', 'dark_mode');
       }
+    }
+  }
+
+  bindCollapseToggle(handler) {
+    const toggleBtn = this.$sidebar.querySelector('#sidebar-toggle');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        handler();
+      });
+    }
+  }
+
+  updateCollapseUI(isCollapsed) {
+    if (isCollapsed) {
+      this.$sidebar.classList.add('collapsed');
+      const toggleIcon = this.$sidebar.querySelector('#sidebar-toggle span');
+      if (toggleIcon) toggleIcon.textContent = 'menu';
+    } else {
+      this.$sidebar.classList.remove('collapsed');
+      const toggleIcon = this.$sidebar.querySelector('#sidebar-toggle span');
+      if (toggleIcon) toggleIcon.textContent = 'menu_open';
     }
   }
 }

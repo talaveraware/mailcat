@@ -123,6 +123,8 @@ body {
   flex-direction: column;
   flex-shrink: 0;
   z-index: 50;
+  transition: width 0.3s ease-in-out, min-width 0.3s ease-in-out;
+  position: relative;
 }
 
 .main-content {
@@ -237,3 +239,90 @@ body {
 .wave-bar:nth-child(3) { animation-delay: 0.30s; }
 .wave-bar:nth-child(4) { animation-delay: 0.45s; }
 .wave-bar:nth-child(5) { animation-delay: 0.60s; }
+
+/* =============================================
+   Sidebar Collapsed State
+   ============================================= */
+
+@media (min-width: 1024px) {
+  .sidebar.collapsed {
+    width: 5rem !important; /* w-20 */
+  }
+}
+
+.sidebar-text {
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 1;
+  max-width: 250px;
+}
+
+.sidebar.collapsed .sidebar-text {
+  opacity: 0;
+  max-width: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.sidebar #new-draft {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Eliminar el "espacio fantasma" generado por la propiedad flex gap cuando el texto está en width 0 */
+.sidebar.collapsed #new-draft,
+.sidebar.collapsed .user-profile-container,
+.sidebar.collapsed nav a,
+.sidebar.collapsed > div > a,
+.sidebar.collapsed .mb-8.flex {
+  gap: 0 !important;
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sidebar.collapsed #new-draft {
+  width: 2.5rem; /* 40px para que tenga la misma escala visual que un ícono con su padding */
+  height: 2.5rem;
+  padding: 0;
+  border-radius: 9999px;
+  margin: 0 auto; /* Centrar horizontalmente respecto a su contenedor principal */
+}
+
+.sidebar.collapsed .user-profile-container {
+  padding: 0;
+  background: transparent;
+  border-color: transparent;
+}
+
+.sidebar-toggle-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  width: 28px;
+  height: 28px;
+  background-color: var(--color-surface-container-high);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 60;
+  transition: all 0.3s ease-in-out;
+  color: var(--color-on-surface);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-toggle-btn:hover {
+  background-color: var(--color-surface-container-highest);
+  transform: scale(1.05);
+}
+
+@media (min-width: 1024px) {
+  .sidebar-toggle-btn {
+    top: 2rem;
+    right: -14px;
+  }
+}

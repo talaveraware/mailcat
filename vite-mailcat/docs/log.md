@@ -152,6 +152,7 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
   - [x] Fixed a bug where the microphone icon remained in the "wave" state when stopping dictation by cleaning up event handlers and UI state synchronously.
 
 ---
+
 ## 13-05-26 - CardOpciones Component Extraction
 
 - Encapsulated the original `#cardOptions` UI into a new `CardOpciones` component using MVC and Factory patterns.
@@ -172,3 +173,12 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
   - [x] Created `src/factory/CardResultadosFactory.js`.
   - [x] Updated `DashboardView.js` to replace hardcoded result block with `<div id="card-result-root"></div>`.
   - [x] Updated `dash_factory.js` to import and inject `CardResultadosFactory` into the placeholder.
+- [x] Implemented collapsible functionality for the Sidebar.
+  - [x] Modified `src/style.css` to include transition classes, `.collapsed` states, and removal of residual gaps.
+  - [x] Updated `SidebarModel.js` to persist `isCollapsed` state in `localStorage`.
+  - [x] Redesigned `SidebarView.js` with a floating toggle button and `.sidebar-text` wrappers for fluid animations.
+  - [x] Integrated `SidebarController.js` to synchronize user interaction with the model and view.
+  - [x] Conducted in-depth analysis and fixed alignment/scale of the "New Draft" button and user avatar in the collapsed state by eliminating flex gaps.
+
+---
+

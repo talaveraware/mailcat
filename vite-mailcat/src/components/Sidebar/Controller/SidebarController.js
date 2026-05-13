@@ -4,8 +4,10 @@ export class SidebarController {
     this.view = view;
     
     this.view.bindThemeToggle(this.handleThemeToggle.bind(this));
+    this.view.bindCollapseToggle(this.handleCollapseToggle.bind(this));
     
     this.view.updateThemeUI(this.model.theme === 'light');
+    this.view.updateCollapseUI(this.model.isCollapsed);
     
     // Ensure the app wrapper reflects the initial theme
     const appWrapper = document.querySelector('.app-wrapper');
@@ -35,5 +37,10 @@ export class SidebarController {
     }
 
     this.view.updateThemeUI(newTheme === 'light');
+  }
+
+  handleCollapseToggle() {
+    const newState = this.model.toggleCollapse();
+    this.view.updateCollapseUI(newState);
   }
 }
