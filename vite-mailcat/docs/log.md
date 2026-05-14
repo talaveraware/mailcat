@@ -181,4 +181,12 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
   - [x] Conducted in-depth analysis and fixed alignment/scale of the "New Draft" button and user avatar in the collapsed state by eliminating flex gaps.
 
 ---
+## 14-05-26 - Added textarea with glass overlay to CardResultados
 
+- Added `<textarea id="text-result">` inside `#result-area` with full width, height, custom scrollbar, transparent background, no outline, disabled.
+- Implemented `#status-overlay` with `glass-panel` covering loading indicator and idle message, providing glass effect.
+- Moved `#loading-indicator` and `#idle-message` inside overlay to appear above textarea.
+- Applied `custom-scrollbar` class to textarea for consistent scroll styling.
+- Updated HTML structure to use flex layout and ensure textarea fills remaining space (`flex-grow`).
+- Ensured new elements respect existing design system tokens and maintain existing functionality.
+---
