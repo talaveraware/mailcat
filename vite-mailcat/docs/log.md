@@ -189,4 +189,12 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
 - Applied `custom-scrollbar` class to textarea for consistent scroll styling.
 - Updated HTML structure to use flex layout and ensure textarea fills remaining space (`flex-grow`).
 - Ensured new elements respect existing design system tokens and maintain existing functionality.
+
+- Developed the Backend Implementation Proposal and SDD Task Roadmap.
+  - [x] Conducted a comprehensive architectural analysis of the project's current state and MVC requirements.
+  - [x] Authored `docs/gemini_backend_proposal.md` detailing the transition to a Client-Server model for secure Gemini API integration.
+  - [x] Defined logical implementation stages: Server Setup, Gemini Service, Frontend Orchestration, and Network Integration.
+  - [x] Created the `tasks/` directory and generated 4 individual SDD task files (001-004) with mandatory verification rules.
+  - [x] Committed the proposal document and task roadmap to the repository.
+
 ---
