@@ -197,4 +197,10 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
   - [x] Created the `tasks/` directory and generated 4 individual SDD task files (001-004) with mandatory verification rules.
   - [x] Committed the proposal document and task roadmap to the repository.
 
+- Completed SDD Task 001: Node.js Server Setup
+  - [x] Created `server/` directory and initialized `package.json` with ESM (`type: "module"`) and `node --watch` dev script.
+  - [x] Installed `express`, `cors`, `dotenv`, and `@google/genai`.
+  - [x] Configured basic Express server in `server/src/server.js` with a `/api/health` endpoint.
+  - [x] Added `server/.env.example` and `server/.gitignore` to protect sensitive keys.
+
 ---

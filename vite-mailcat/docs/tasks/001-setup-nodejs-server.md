@@ -2,7 +2,7 @@
 
 ## Estado
 
-Status: `no completado`
+Status: `completado`
 
 ## Reglas Mandatorias (MANDATORY)
 
