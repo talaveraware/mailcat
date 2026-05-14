@@ -18,7 +18,7 @@ export class CardResultadosView {
         <div class="p-4 border-b border-outline-variant/10 flex items-center justify-between">
           <div class="flex items-center gap-2">
             <div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-            <span class="text-xs font-bold uppercase tracking-widest text-primary">Synthesis Result</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-primary">MailCat Resultado</span>
           </div>
           <div class="flex gap-2">
             <button id="copyBtn" class="p-1.5 rounded-lg hover:bg-surface-container-highest text-on-surface-variant transition-colors flex items-center justify-center" title="Copy to clipboard">
@@ -40,8 +40,8 @@ export class CardResultadosView {
             <div class="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center mb-3 border border-outline-variant/10 shadow-sm text-primary">
               ${MAIL_ICON}
             </div>
-            <h4 class="font-bold text-on-surface text-sm mb-0.5">Ready for synthesis</h4>
-            <p class="text-[11px] text-on-surface-variant max-w-[200px]">Professional translation will appear here.</p>
+            <h4 class="font-bold text-on-surface text-sm mb-0.5">Listo para trabajar</h4>
+            <p class="text-[11px] text-on-surface-variant max-w-[200px]">El texto profesional aparecerá aquí.</p>
           </div>
         </div>
 

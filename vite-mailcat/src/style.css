@@ -249,9 +249,9 @@ body {
     width: 5rem !important; /* w-20 */
   }
 }
-
+/* Animación para ocultar el texto del sidebar */
 .sidebar-text {
-  transition: all 0.3s ease-in-out;
+  transition: all .3s ease-in-out;
   overflow: hidden;
   white-space: nowrap;
   opacity: 1;
