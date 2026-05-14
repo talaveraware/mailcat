@@ -203,4 +203,11 @@ Para mantener la consistencia y facilitar la lectura, cada nueva entrada en este
   - [x] Configured basic Express server in `server/src/server.js` with a `/api/health` endpoint.
   - [x] Added `server/.env.example` and `server/.gitignore` to protect sensitive keys.
 
+- Completed SDD Task 002: Gemini Service and Transformation Endpoint
+  - [x] Created `server/src/services/gemini.service.js` with predefined system prompts for `formalize`, `shorten`, and `changeTone`.
+  - [x] Implemented logic to interact with `@google/genai` SDK using dynamic prompts.
+  - [x] Created `server/src/routes/api.routes.js` defining the `POST /api/transform` endpoint with request validation.
+  - [x] Mounted `apiRoutes` in the main Express `server.js`.
+  - [x] Tested endpoint validations and error handling (HTTP 400/500).
+
 ---

@@ -1,7 +1,7 @@
 # 002-Implementación del Servicio Gemini y Endpoint de Transformación
 
 ## Estado
-Status: `no completado`
+Status: `completado`
 
 ## Reglas Mandatorias (MANDATORY)
 1. **Preguntas Requeridas:** Antes de crear los archivos o escribir el código de los prompts, **DEBES** consultar con el usuario la lista exacta de `action` (tipos de transformación) que el endpoint debe soportar en esta primera versión (ej. 'formalize', 'shorten') y si el usuario tiene preferencias específicas para el "System Prompt" de cada acción. NO DEBES INFERIR los prompts ni la lista de acciones sin confirmación. NO DEBES continuar hasta que el usuario responda.
